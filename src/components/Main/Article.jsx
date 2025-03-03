@@ -22,6 +22,7 @@ const Article = ({
         className="article--image"
         style={{ backgroundImage: `url(${image})` }}
         role="img"
+        aria-label={`${countryName} image`}
       ></div>
       <div className="article-text">
         <h2 className="article--title">{countryName}</h2>
