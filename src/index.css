@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --very-light-gray: hsl(0, 0%, 98%); /* ! Light mode background */
+  --dark-gray: hsl(0, 0%, 52%); /* ! Light mode input */
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+}
+
+:root:has(main.dark-mode) {
+  --white: hsl(209, 23%, 22%);
+  --very-light-gray: hsl(207, 26%, 17%); /* ! Light mode background */
+  --dark-gray: hsl(200, 15%, 8%); /* ! Light mode input */
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--very-light-gray);
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--very-dark-blue-text);
+}
+
+body:has(main.dark-mode) {
+  color: hsl(0, 0%, 100%);
+}
+
+body:has(main.dark-mode) svg {
+  color: hsl(0, 0%, 100%);
+}
+
+body:has(main.dark-mode) button {
+  color: hsl(0, 0%, 100%);
+}
+
+body:has(main.dark-mode) input {
+  color: hsl(0, 0%, 100%);
+  background-color: var(--white);
+}
+
+input::placeholder {
+  font-weight: 600;
+}
+
+body:has(main.dark-mode) input::placeholder {
+  color: hsl(0, 0%, 100%);
+}
+
+body:has(main.dark-mode) .modal {
+  color: hsl(0, 0%, 100%);
+}
+
+body:has(main.dark-mode) .regions-menu button:hover {
+  background-color: hsl(207, 26%, 17%);
+}
+
+/*
+SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* _______________________________ */
+/* Below 1200px (Landscape Tablets) */
+/* _______________________________ */
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .articles-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* _______________________________ */
+/* Below 944px (Tablets) */
+/* _______________________________ */
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+}

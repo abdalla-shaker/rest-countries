@@ -1,0 +1,42 @@
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 1.6rem rgba(0, 0, 0, 0.09);
+  margin-bottom: 4.8rem;
+}
+
+.header-container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 2.4rem 1.6rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header--title {
+  font-size: 2.4rem;
+}
+
+.header--btn {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+
+  cursor: pointer;
+}
+
+.moon-icon {
+  stroke-width: 1px;
+}
+
+/*
+SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
