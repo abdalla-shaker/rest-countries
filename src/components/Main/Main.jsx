@@ -20,6 +20,14 @@ const Main = ({ handleSetCountry }) => {
     FILTERED_COUNTRIES = countries.filter(
       (country) => country.region === filterRegion
     );
+
+    if (searchRegion) {
+      FILTERED_COUNTRIES = countries.filter((country) =>
+        country.name.common
+          .toLowerCase()
+          .includes(searchRegion.toLowerCase().trim())
+      );
+    }
   } else if (searchRegion) {
     FILTERED_COUNTRIES = countries.filter((country) =>
       country.name.common
