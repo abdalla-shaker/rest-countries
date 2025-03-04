@@ -8,34 +8,26 @@ import Article from "./Article";
 
 import "./main.css";
 
-let FILTERED_COUNTRIES;
-
 const Main = ({ handleSetCountry }) => {
   const { isLoading, countries, errorMsg } = useCountries();
 
   const { filterRegion } = useContext(FilterContext);
   const { searchRegion } = useContext(SearchCtx);
 
+  let FILTERED_COUNTRIES = countries;
+
   if (filterRegion) {
-    FILTERED_COUNTRIES = countries.filter(
+    FILTERED_COUNTRIES = FILTERED_COUNTRIES.filter(
       (country) => country.region === filterRegion
     );
+  }
 
-    if (searchRegion) {
-      FILTERED_COUNTRIES = countries.filter((country) =>
-        country.name.common
-          .toLowerCase()
-          .includes(searchRegion.toLowerCase().trim())
-      );
-    }
-  } else if (searchRegion) {
-    FILTERED_COUNTRIES = countries.filter((country) =>
+  if (searchRegion) {
+    FILTERED_COUNTRIES = FILTERED_COUNTRIES.filter((country) =>
       country.name.common
         .toLowerCase()
         .includes(searchRegion.toLowerCase().trim())
     );
-  } else {
-    FILTERED_COUNTRIES = countries;
   }
 
   return (
