@@ -10,7 +10,10 @@ const useCountries = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
+        const response = await fetch(
+          'https://api.restcountries.com/countries/v5/codes.alpha_2/ca?pretty=1',
+          { headers: { 'Authorization': 'Bearer rc_live_demo' } }
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch countries data");
         }
