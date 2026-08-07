@@ -11,8 +11,8 @@ const useCountries = () => {
 
       try {
         const response = await fetch(
-          'https://api.restcountries.com/countries/v5/codes.alpha_2/ca?pretty=1',
-          { headers: { 'Authorization': 'Bearer rc_live_demo' } }
+          'https://api.restcountries.com/countries/v5',
+          { headers: { 'Authorization': 'Bearer rc_live_548071cc9004404db0d3b080aba8ea6e' } }
         );
         if (!response.ok) {
           throw new Error("Failed to fetch countries data");
