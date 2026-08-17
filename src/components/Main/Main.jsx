@@ -18,7 +18,7 @@ const Main = ({ handleSetCountry }) => {
 
   if (filterRegion) {
     FILTERED_COUNTRIES = FILTERED_COUNTRIES.filter(
-      (country) => country.region === filterRegion
+      (country) => country.region === filterRegion,
     );
   }
 
@@ -26,7 +26,7 @@ const Main = ({ handleSetCountry }) => {
     FILTERED_COUNTRIES = FILTERED_COUNTRIES.filter((country) =>
       country.name.common
         .toLowerCase()
-        .includes(searchRegion.toLowerCase().trim())
+        .includes(searchRegion.toLowerCase().trim()),
     );
   }
 
@@ -41,8 +41,8 @@ const Main = ({ handleSetCountry }) => {
       <div className="articles-container">
         {FILTERED_COUNTRIES.map((country) => (
           <Article
-            key={country.name.common}
-            countryName={country.name.common}
+            key={country.name}
+            countryName={country.name}
             image={country.flags.png}
             population={country.population}
             region={country.region}

@@ -10,9 +10,7 @@ const useCountries = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch(
-          '../../data.json'
-        );
+        const response = await fetch("/rest-countries/data/countries.json");
         if (!response.ok) {
           throw new Error("Failed to fetch countries data");
         }

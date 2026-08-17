@@ -16,6 +16,16 @@ dialog {
   padding: 4.8rem 2.4rem;
 }
 
+.languages {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.language-name-cont {
+  display: flex;
+  gap: 8px;
+}
+
 @keyframes open {
   from {
     scale: 0;

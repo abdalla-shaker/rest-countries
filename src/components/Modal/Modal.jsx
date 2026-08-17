@@ -40,8 +40,7 @@ const ResultModal = forwardRef(function ResultModal({ region, onClose }, ref) {
           <div className="modal--list-container">
             <ul className="modal--list">
               <li className="modal--list-item">
-                <strong>Native Name: </strong>{" "}
-                {Object.values(region.name.nativeName).slice(-1)[0]?.common}
+                <strong>Native Name: </strong> {region.nativeName}
               </li>
               <li className="modal--list-item">
                 <strong>Population: </strong>{" "}
@@ -59,15 +58,20 @@ const ResultModal = forwardRef(function ResultModal({ region, onClose }, ref) {
             </ul>
             <ul className="modal--list">
               <li className="modal--list-item">
-                <strong>Top Level Domain: </strong> {region.tld}
+                <strong>Top Level Domain: </strong> {region.topLevelDomain}
               </li>
               <li className="modal--list-item">
                 <strong>Currencies: </strong>{" "}
-                {Object.values(region.currencies).slice(-1)[0]?.name}
+                {region.currencies &&
+                  Object.values(region.currencies).slice(-1)[0]?.name}
               </li>
-              <li className="modal--list-item">
+              <li className="modal--list-item languages">
                 <strong>Languages: </strong>{" "}
-                {Object.values(region.languages).join(", ")}
+                <div className="language-name-cont">
+                  {region.languages.map((language) => (
+                    <p key={language.name}>{language.name}</p>
+                  ))}
+                </div>
               </li>
             </ul>
           </div>
@@ -86,7 +90,7 @@ const ResultModal = forwardRef(function ResultModal({ region, onClose }, ref) {
         </div>
       </section>
     </dialog>,
-    document.getElementById("modal")
+    document.getElementById("modal"),
   );
 });
 
